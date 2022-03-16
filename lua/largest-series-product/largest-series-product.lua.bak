@@ -1,0 +1,23 @@
+return function(config)
+  if config.span < 0 then
+    error("negative spans are invalid")
+  elseif config.span > #config.digits then
+    error("digits are too short for span")
+  end
+
+  local curr_product = 1
+  for i = 1, config.span, 1 do
+    curr_product = curr_product * tonumber(config.digits:sub(i, i))
+  end
+  local max_so_far = curr_product
+  for i = 2, #config.digits - config.span, 1 do
+    curr_product = 1
+    for j = 1, config.span, 1 do
+      curr_product = curr_product * tonumber(config.digits:sub(i + j, i + j))
+    end
+    if curr_product > max_so_far then
+      max_so_far = curr_product
+    end
+  end
+  return max_so_far
+end
