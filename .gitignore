@@ -1,4 +1,2 @@
-**/*.md
-**/*_spec.lua
+*.md
 .exercism
-.busted
