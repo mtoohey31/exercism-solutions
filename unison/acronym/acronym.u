@@ -1,0 +1,9 @@
+acronym.abbreviate : Text -> Text
+acronym.abbreviate test =
+  separators = " -"
+  allowed = (Pattern.or (chars separators) asciiLetter)
+  filter f s = Text.flatMap (c -> if f c then Char.toText c else "") s
+  filtered = filter (c -> isMatch allowed (Char.toText c)) test
+  words = segmentBy (c -> not (isMatch (chars separators) (Char.toText c))) filtered
+  letters = List.filterMap (w -> List.head (toCharList w)) words
+  Text.map Char.toUppercase (fromCharList letters)

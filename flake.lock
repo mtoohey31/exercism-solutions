@@ -18,7 +18,51 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
+        "unison-nix": "unison-nix",
         "utils": "utils"
+      }
+    },
+    "unison": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673029025,
+        "narHash": "sha256-Bclj4wVl9VLPYN9623oV564ziBn0/Kgc3BLcTBts/cE=",
+        "owner": "unisonweb",
+        "repo": "unison",
+        "rev": "c05f679c3c859821f3e14549577c26a0b927d7d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unisonweb",
+        "repo": "unison",
+        "type": "github"
+      }
+    },
+    "unison-nix": {
+      "inputs": {
+        "flake-utils": [
+          "utils"
+        ],
+        "nixpkgs-darwin": [
+          "nixpkgs"
+        ],
+        "nixpkgs-non-darwin": [
+          "nixpkgs"
+        ],
+        "unison": "unison"
+      },
+      "locked": {
+        "lastModified": 1673040466,
+        "narHash": "sha256-Iwu7eAVIsGIg91bQIOTy9BdYu+E71dq5k4xeHS8ZpbI=",
+        "owner": "ceedubs",
+        "repo": "unison-nix",
+        "rev": "fd2b4b30a4de746f183cbbd9c1f22de91e0d9861",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ceedubs",
+        "repo": "unison-nix",
+        "type": "github"
       }
     },
     "utils": {

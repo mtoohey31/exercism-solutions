@@ -1,0 +1,11 @@
+toDigits : Nat -> [Nat]
+toDigits n = if n >= 10
+  then toDigits (n / 10) :+ mod n 10 
+  else singleton n 
+
+armstrongNumbers.isArmstrongNumber : Nat -> Boolean
+armstrongNumbers.isArmstrongNumber number =
+  digits = toDigits number
+  digits
+    |> map (flip pow (size digits))
+    |> sum == number

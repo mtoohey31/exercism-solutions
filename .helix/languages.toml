@@ -1,0 +1,9 @@
+[[language]]
+name = "unison"
+scope = "source.unison"
+injection-regex = "unison"
+file-types = ["u"]
+roots = []
+comment-token = "--"
+language-server = { command = "nc", args = ["127.0.0.1", "5757"] }
+indent = { tab-width = 2, unit = "  " }
