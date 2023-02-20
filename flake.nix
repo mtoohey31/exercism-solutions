@@ -28,6 +28,10 @@
         unison = mkShell {
           packages = [ exercism unison-ucm ];
         };
+
+        x86-64-assembly = mkShell {
+          packages = [ exercism nasm ];
+        };
       };
     });
 }
