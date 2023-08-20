@@ -29,6 +29,10 @@
           packages = [ exercism unison-ucm ];
         };
 
+        webassembly = mkShell {
+          packages = [ exercism nodejs nodePackages.npm ];
+        };
+
         x86-64-assembly = mkShell {
           packages = [ exercism nasm ];
         };
